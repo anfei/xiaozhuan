@@ -1,10 +1,10 @@
-小篆字体转换器
+小篆查询
 =====================
 https://anfei.github.io/xiaozhuan/
 
-实时将中文转换成方正小篆字体.
+实时将汉字转换成方正小篆字体.
 
-web端和移动端都可~
+web端和移动端皆可用~
 
 [点我使用](https://anfei.github.io/xiaozhuan/)
 
