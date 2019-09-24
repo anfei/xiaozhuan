@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<meta charset="UTF-8">
+		<title>小篆转换器</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="方正小篆转换,方正小篆转换器">	
+	  <meta name="description" content="方正小篆转换器可以实时将中文转换成方正小篆字体">
+		<link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/main.css"/>
+	</head>
+	<body>
+		<header>方正小篆</header>
+	  <section class="content">
+		  <textarea class="form-control" ng-model="xiaozhuan" placeholder="在这里输入要转换的中文"></textarea>
+	  </section>
+		<hr>
+		<h1 class="boards">{{xiaozhuan}}</h1>
+		<script src="http://apps.bdimg.com/libs/angular.js/1.5.0-beta.0/angular.min.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
