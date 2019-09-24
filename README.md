@@ -2,6 +2,8 @@
 =====================
 https://anfei.github.io/xiaozhuan/
 
-小篆字体转换器可以实时将中文转换成方正小篆字体.
+实时将中文转换成方正小篆字体.
 
-[演示地址](https://anfei.github.io/xiaozhuan/)
+web端和移动端都可~
+
+[点我使用](https://anfei.github.io/xiaozhuan/)
