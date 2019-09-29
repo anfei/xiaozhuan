@@ -44,7 +44,7 @@ function icoCopy() {
           .pipe(dest('.deploy_git'))
 }
 function gulpClean() {
-  return src('.deploy_git')
+  return src('.deploy_git/*[s|t|o|l]')
           .pipe(clean())
 }
 function watchTask() {
