@@ -15,40 +15,40 @@ function minJs() {
   				.pipe(sourcemaps.init())
           .pipe(uglify())
 //        .pipe(concat('all.min.js'))
-          .pipe(dest('dest/js'))
+          .pipe(dest('.deploy_git/js'))
 }
 function minCss() {
   return src('css/*.css','!css/*.min.css')
   				.pipe(sourcemaps.init())
           .pipe(cleanCSS({compatibility: 'ie8'}))
 //        .pipe(concat('all.min.css'))
-          .pipe(dest('dest/css'))
+          .pipe(dest('.deploy_git/css'))
 }
 function minHtml() {
   return src('*.html')
   				.pipe(jshint())
           .pipe(htmlmin({ collapseWhitespace: true }))
-          .pipe(dest('dest'))
+          .pipe(dest('.deploy_git'))
 }
 function minImage() {
   return src('images/*.png')
           .pipe(imagemin())
-          .pipe(dest('dest/images'))
+          .pipe(dest('.deploy_git/images'))
 }
 function fontCopy() {
   return src('font/*.TTF')
-          .pipe(dest('dest/font'))
+          .pipe(dest('.deploy_git/font'))
 }
 function icoCopy() {
   return src('*.ico')
-          .pipe(dest('dest'))
+          .pipe(dest('.deploy_git'))
 }
 function gulpClean() {
-  return src('dest')
+  return src('.deploy_git')
           .pipe(clean())
 }
 function watchTask() {
-    watch(['dest','js/*.js','images/*.png','css/*.css','*.html'], series(gulpClean,minJs,minImage,minCss,minHtml));
+    watch(['.deploy_git','js/*.js','images/*.png','css/*.css','*.html'], series(gulpClean,minJs,minImage,minCss,minHtml));
 }
 function defaultTask() {
 	return series(gulpClean,minJs,minImage,minCss,minHtml,fontCopy,icoCopy);
