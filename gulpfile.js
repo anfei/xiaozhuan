@@ -39,6 +39,10 @@ function fontCopy() {
   return src('font/*.TTF')
           .pipe(dest('dest/font'))
 }
+function icoCopy() {
+  return src('*.ico')
+          .pipe(dest('dest'))
+}
 function gulpClean() {
   return src('dest')
           .pipe(clean())
@@ -47,7 +51,7 @@ function watchTask() {
     watch(['dest','js/*.js','images/*.png','css/*.css','*.html'], series(gulpClean,minJs,minImage,minCss,minHtml));
 }
 function defaultTask() {
-	return series(gulpClean,minJs,minImage,minCss,minHtml,fontCopy);
+	return series(gulpClean,minJs,minImage,minCss,minHtml,fontCopy,icoCopy);
 }
 
 exports.default = defaultTask()
