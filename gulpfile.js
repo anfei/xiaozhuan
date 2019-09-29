@@ -40,7 +40,7 @@ function fontCopy() {
           .pipe(dest('.deploy_git/font'))
 }
 function icoCopy() {
-  return src('*.ico')
+  return src('*[.ico|.md]')
           .pipe(dest('.deploy_git'))
 }
 function gulpClean() {
@@ -48,7 +48,7 @@ function gulpClean() {
           .pipe(clean())
 }
 function watchTask() {
-    watch(['.deploy_git','js/*.js','images/*.png','css/*.css','*.html'], series(gulpClean,minJs,minImage,minCss,minHtml));
+    watch(['.deploy_git/*[s|t|o|l]','js/*.js','images/*.png','css/*.css','*.html'], series(gulpClean,minJs,minImage,minCss,minHtml));
 }
 function defaultTask() {
 	return series(gulpClean,minJs,minImage,minCss,minHtml,fontCopy,icoCopy);
