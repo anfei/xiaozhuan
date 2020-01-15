@@ -15,7 +15,23 @@ function minJs() {
   				.pipe(sourcemaps.init())
           .pipe(uglify())
 //        .pipe(concat('all.min.js'))
-          .pipe(dest('.deploy_git/js'))
+          .pipe(dest('.deploy_git/js'));
+          
+/*
+ * 分阶段输出
+ * 同一个管道（pipeline）中创建未压缩（unminified）和已压缩（minified）的文件
+ * */
+//return src('src/*.js')
+//.pipe(babel())
+//新加入的文件只对后续的转换可用。
+//.pipe(src('vendor/*.js'))
+//输出未压缩js文件
+//.pipe(dest('output/'))
+//.pipe(uglify())
+//重命名js
+//.pipe(rename({ extname: '.min.js' }))
+//输出压缩版js文件
+//.pipe(dest('output/'));
 }
 function minCss() {
   return src('css/*.css','!css/*.min.css')

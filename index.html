@@ -14,11 +14,13 @@
 	<body>
 		<img src="images/xiaozhuan.png" height="0" width="0"/>
 		<header>方正小篆</header>
-	  <section class="content">
+	  <section class="container content">
 		  <textarea class="form-control" ng-model="xiaozhuan" placeholder="请输入汉字"></textarea>
 	  </section>
 		<hr>
-		<h1 class="boards">{{xiaozhuan}}</h1>
+		<div class="container">
+      <h1 class="boards">{{xiaozhuan}}</h1>
+		</div>
 		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 </html>
